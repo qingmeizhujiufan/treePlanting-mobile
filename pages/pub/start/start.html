@@ -1,0 +1,16 @@
+<img src="img/start.png" class="start-img" data-bind="css: {'show': start}" />
+<div class="position process-bar">
+	<div class="pos-relative">
+		<div class="position loaded">
+			<div class="pos-relative">
+				<div class="position loaded-rate" data-bind="text: rate() + '%'"></div>
+			</div>
+		</div>
+		<div class="position rate" data-bind="style: {width: bar() + 'vw'}">
+			<div class="pos-relative">
+				<div class="position bar-left"></div>
+				<div class="position bar-right"></div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,65 @@
+define(function() {
+	//应用的图片资源
+	return {
+		//启动页
+		start: [
+			"img/start.png",
+			"img/progress-bar.png",
+			"img/bar-left.png",
+			"img/bar-right.png",
+			"img/loaded.png",
+			"img/rate.png"
+		],
+		//登录页
+		login: [
+			"img/login-bg.png",
+			"img/enter.png",
+			"img/login-input-bg.png",
+			"img/login-text.png"
+		],
+		//主界面
+		game: [
+			"img/add.png",
+			"img/available-sum-left-icon.png",
+			"img/available-sum-text.png",
+			"img/bg.png",
+			"img/collect.png",
+			"img/deal.png",
+			"img/drop-down.png",
+			"img/friend.png",
+			"img/gate.png",
+			"img/hallsell.png",
+			"img/header-bg.png",
+			"img/input-bg.png",
+			"img/man.png",
+			"img/peach.png",
+			"img/plant.png",
+			"img/progress-bar.png",
+			"img/rate-bg.png",
+			"img/setting.png",
+			"img/sum-bg.png",
+			"img/sum-left-icon.png",
+			"img/sum-text.png",
+			"img/tree-type-1.png",
+			"img/tree-type-2.png",
+			"img/tree-type-3.png",
+			"img/trunk.png",
+			"img/window-bg.png",
+			"img/woman.png",
+			"img/close.png",
+			"img/next.png",
+			"img/prev.png",
+			"img/segmented.png",
+			"img/comfirm.png",
+			"img/cancel.png",
+			"img/strip.png",
+			"img/invite.png",
+			"img/refrush.png",
+			"img/level.png",
+			"img/goback.png",
+			"img/mall.png",
+			"img/deal-sum-text.png",
+			"img/lottery-bg.png"
+		]
+	};
+});

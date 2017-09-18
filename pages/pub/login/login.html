@@ -1,0 +1,16 @@
+<img src="img/login-bg.png" style="position: fixed;top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;" />
+<div class="position login-box">
+	<div class="pos-relative mui-text-center">
+		<div class="" style="margin-top: 20vh;">
+			<img src="img/login-text.png" style="width: 16vw; height: 6vw;" />
+		</div>
+		<div>
+			<input type="text" placeholder="请输入账号" autocomplete="off" data-bind="value: username,valueUpdate:'afterkeydown'" />
+		</div>
+		<div>
+			<input type="password" placeholder="请输入密码" autocomplete="new-password" data-bind="value: password,valueUpdate:'afterkeydown'" />
+		</div>
+		<div class="wrap-btn" style="margin-top: 5vh;">
+			<span class="enter-btn" data-bind="event: {tap: login}"></span>
+		</div>
+	</div>

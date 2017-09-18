@@ -1,0 +1,703 @@
+<!-- vanvas 雨落 -->
+<canvas id="canvas" style="position: absolute; top: 0px; left: 0px; opacity: 0.1; width: 100%; height: 100%; z-index: 10;"></canvas>
+<!-- 背景图 -->
+<img src="img/bg.png" class="game-bg" />
+<div style="position: relative; z-index: 100;">
+	<!-- 用户信息 -->
+	<div class="position user-header" data-bind="event: {tap: showUserInfoWindow}">
+		<div class="pos-relative">
+			<div class="wrap-headerimg">
+				<img data-bind="attr: {src: user_sex() == '男' ? 'img/man.png' : 'img/woman.png'}" />
+			</div>
+			<div class="user-name" data-bind="text: user_name"></div>
+			<div class="user-level" data-bind="">普通玩家</div>
+			<div class="user-tree-level" data-bind="text: user_tree_level"></div>
+		</div>
+	</div>
+	<!-- 刷新应用 -->
+	<div class="position refrush" data-bind="event: {tap: refushApp}"></div>
+	<!-- 挂卖 -->
+	<div class="position hallsell" data-bind="event: {tap: showHallSellWindow}"></div>
+	<!-- 交易 -->
+	<div class="position deal" data-bind="event: {tap: showDealWindow}"></div>
+	<!-- 好友 -->
+	<div class="position friend" data-bind="event: {tap: showFriendWindow}"></div>
+	<!-- 邀请 -->
+	<div class="position invite" data-bind="event: {tap: showInviteWindow}"></div>
+	<!-- 下拉框 -->
+	<div class="position drop-down" data-bind="event: {tap: openSelectList}">
+		<div class="pos-relative" data-bind="style: {'height': openDrop ? 'auto' : '0'}">
+			<div class="drop-down-list" data-bind="css: {'open': openDrop}">
+				<ul class="mui-list-unstyled">
+					<li data-bind="event: {tap: openNoticeWindow}">公告</li>
+					<li data-bind="event: {tap: existGame}">退出</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 设置 -->
+	<div class="position setting" data-bind="event: {tap: showSetting}"></div>
+	<!-- 种植 -->
+	<div class="position plant" data-bind="event: {tap: plantTree}"></div>
+	<!-- 采集 -->
+	<!--<div class="position collect" data-bind="event: {tap: showCollect}"></div>-->
+	<!-- 商城 -->
+	<div class="position mall" data-bind="event: {tap: openMall}"></div>
+	<!-- 仙门 -->
+	<div class="position gate"></div>
+	<!-- 果树 -->
+	<div class="position trees">
+		<div class="pos-relative" data-bind="foreach: plantInfo">
+			<div class="tree" data-bind="css: 'tree' + index">
+				<div class="trunk" data-bind="visible: total >= 300, event: {tap: $parent.showTeeWindow}">
+					<div class="pos-relative">
+						<div class="peach" data-bind="visible: hasPeach(), event: {tap: $parent.pickPeachs}"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 拆分率 -->
+	<div class="position rate" data-bind="event: {tap: ''}">
+		<div class="text">
+			<span>今日拆分率:</span>
+			<span data-bind="text: user_split_rate() + '%'"></span>
+		</div>
+	</div>
+	<!-- 仓库 -->
+	<div class="position sum" data-bind="event: {tap: ''}">
+		<div class="pos-relative">
+			<div class="left-icon"></div>
+			<div class="text" data-bind="text: totalgains"></div>
+			<div class="right-icon"></div>
+			<div class="sum-text"></div>
+		</div>
+	</div>
+	<!-- 今日收益 -->
+	<div class="position available-sum" data-bind="event: {tap: ''}">
+		<div class="pos-relative">
+			<div class="left-icon"></div>
+			<div class="text" data-bind="text: store"></div>
+			<div class="right-icon"></div>
+			<div class="available-sum-text"></div>
+		</div>
+	</div>
+	<!-- 可交易数量 -->
+	<div class="position top-left-sum" data-bind="event: {tap: ''}">
+		<div class="pos-relative">
+			<div class="left-icon"></div>
+			<div class="text" data-bind="text: user_enablesell_sum"></div>
+			<div class="right-icon"></div>
+			<div class="deal-sum-text"></div>
+		</div>
+	</div>
+	<!-- 用户信息框 -->
+	<div class="position box" data-bind="css: isShowUserInfoWindow() ? 'active' : ''">
+		<div class="pos-relative">
+			<div class="box-window">
+				<div class="pos-relative">
+					<span class="close-btn" data-bind="event: {tap: closeUserInfoWindow}"></span>
+					<div class="box-header">
+						<h4>用户个人信息</h4>
+					</div>
+					<div class="box-body">
+						<div class="mui-scroll-wrapper system-scroll" style="top: 11vh; height: 70vh; overflow-y: scroll;">
+							<div class="mui-scroll">
+								<div class="control-group">
+									<label class="control-label">用户名：</label>
+									<div class="controls">
+										<span data-bind="text: user_name"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">用户积分：</label>
+									<div class="controls">
+										<span data-bind="text: user_points"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">密码：</label>
+									<div class="controls">
+										<input type="password" class="required" data-bind="value: user_pwd, valueUpdate: 'afterkeydown'" maxlength="11" /><span class="validate-tip"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">确认密码：</label>
+									<div class="controls">
+										<input type="password" class="required" data-bind="value: user_pwd_2, valueUpdate: 'afterkeydown'" maxlength="11" /><span class="validate-tip"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">二级密码：</label>
+									<div class="controls">
+										<input type="password" class="required" data-bind="value: user_secondpwd, valueUpdate: 'afterkeydown'" maxlength="11" /><span class="validate-tip"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">确认二级密码：</label>
+									<div class="controls">
+										<input type="password" class="required" data-bind="value: user_secondpwd_2, valueUpdate: 'afterkeydown'" maxlength="11" /><span class="validate-tip"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">性别：</label>
+									<div class="controls">
+										<span data-bind="text: user_sex"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">姓名：</label>
+									<div class="controls">
+										<span data-bind="text: user_realname"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">电话号码：</label>
+									<div class="controls">
+										<span data-bind="text: user_telephone"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">微信号：</label>
+									<div class="controls">
+										<span data-bind="text: user_weixin"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">QQ号：</label>
+									<div class="controls">
+										<span data-bind="text: user_qq"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">支付宝：</label>
+									<div class="controls">
+										<span data-bind="text: user_alipay"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label"></label>
+									<div class="controls">
+										<span class="btn comfirm-btn" data-bind="event: {tap: updateUserInfo}">确认</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 果树信息框 -->
+	<div class="position box" data-bind="css: isShowTeeWindow() ? 'active' : ''">
+		<div class="pos-relative">
+			<div class="box-window">
+				<div class="pos-relative">
+					<span class="close-btn" data-bind="event: {tap: closeTeeWindow}"></span>
+					<div class="box-header">
+						<h4>果树信息</h4>
+					</div>
+					<div class="box-body">
+						<div class="mui-scroll-wrapper system-scroll" style="top: 11vh; height: 70vh; overflow-y: scroll;">
+							<div class="mui-scroll">
+								<div class="control-group">
+									<label class="control-label">果树类别：</label>
+									<div class="controls">
+										<span data-bind="text: treeInfo().typeName"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">果树编号：</label>
+									<div class="controls">
+										<span data-bind="text: treeInfo().id + '号' + treeInfo().typeName"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">桃子数：</label>
+									<div class="controls">
+										<span data-bind="text: treeInfo().total"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">是否增种：</label>
+									<div class="controls">
+										<div class="mui-switch mui-switch-mini" data-bind="css: {'mui-active': treeInfo().isAddPlant()}, event: {tap: sureAdd}">
+											<div class="mui-switch-handle"></div>
+										</div>
+									</div>
+								</div>
+								<div class="control-group" data-bind="visible: treeInfo().isAddPlant()">
+									<label class="control-label">增种数目：</label>
+									<div class="controls">
+										<input type="text" data-bind="value: treeInfo().addPlantSum, valueUpdate: 'afterkeydown'" />
+									</div>
+								</div>
+								<div class="control-group" data-bind="visible: treeInfo().isAddPlant()">
+									<label class="control-label"></label>
+									<div class="controls">
+										<span class="btn comfirm-btn" data-bind="event: {tap: comfirmAddPlant}">确认</span>
+									</div>
+								</div>
+								<div style="height: 1px;margin: 0 2vw;background-color: #42424c;"></div>
+								<div class="control-group" style="margin-top: 5vh;">
+									<label class="control-label">摘桃数目：</label>
+									<div class="controls">
+										<input type="text" data-bind="value: treeInfo().pickSum, valueUpdate: 'afterkeydown'" />
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label"></label>
+									<div class="controls">
+										<span class="btn comfirm-btn" data-bind="event: {tap: comfirmPick}">确认</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 二级密码框 -->
+	<div class="position box" data-bind="css: isShowSecondpwdWindow().showSecondpwdWindow ? 'active' : ''">
+		<div class="pos-relative">
+			<div class="box-window">
+				<div class="pos-relative">
+					<span class="close-btn" data-bind="event: {tap: closeSecondpwdWindow}"></span>
+					<div class="box-header">
+						<h4>二级密码</h4>
+					</div>
+					<div class="box-body" style="margin-top: 18vh;">
+						<div class="control-group">
+							<label class="control-label">二级密码：</label>
+							<div class="controls">
+								<input type="password" placeholder="请输入二级密码" data-bind="value: user_secondpwd, valueUpdate: 'afterkeydown'" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label"></label>
+							<div class="controls">
+								<span class="btn comfirm-btn" data-bind="event: {tap: checkSecondpwd}">确认</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 交易大厅框 -->
+	<div class="position box" data-bind="css: (isShowSecondpwdWindow().showHallWindow && chooseDealOrHallSell() == 1) ? 'active' : ''">
+		<div class="pos-relative">
+			<div class="box-window">
+				<div class="pos-relative">
+					<span class="close-btn" data-bind="event: {tap: closeDealWindow}"></span>
+					<div class="box-header">
+						<h4>交易大厅</h4>
+					</div>
+					<div class="box-body">
+						<div class="mui-segmented-control">
+							<a class="mui-control-item mui-active" href="#item1">交易</a>
+							<a class="mui-control-item" href="#item2">我发起的</a>
+							<a class="mui-control-item" href="#item3">@我</a>
+						</div>
+						<div id="item1" class="mui-control-content mui-active" style="margin-top: 12vh;">
+							<div class="control-group">
+								<label class="control-label">交易对象：</label>
+								<div class="controls">
+									<input type="text" data-bind="value: exchanger, valueUpdate: 'afterkeydown'" />
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">数目：</label>
+								<div class="controls">
+									<input type="number" data-bind="value: exchangeSum, valueUpdate: 'afterkeydown'" />
+									<span>(最小为10，为10的倍数)</span>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">&nbsp;</label>
+								<div class="controls">
+									<span>
+										<span>您将消耗&nbsp;</span>
+										<span data-bind="text: exchangeSum() * 1.1"></span>
+										<span>&nbsp;个桃子</span>
+									</span>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label"></label>
+								<div class="controls">
+									<span class="btn comfirm-btn" data-bind="event: {tap: launchExchange}">确认</span>
+								</div>
+							</div>
+						</div>
+						<div id="item2" class="mui-control-content">
+							<div class="list-header">
+								<span class="sort">序号</span>
+								<span style="">交易对象</span>
+								<span>交易种子数</span>
+								<span class="date">交易时间</span>
+								<span class="state">状态</span>
+							</div>
+							<div class="mui-scroll-wrapper" style="height: 57vh;">
+								<div class="mui-scroll">
+									<ul class="mui-table-view" data-bind="foreach: myExchangeList">
+										<li class="mui-table-view-cell">
+											<span class="sort" data-bind="text: $index() + 1"></span>
+											<span data-bind="text: user_exchangename"></span>
+											<span data-bind="text: user_exchangenumber"></span>
+											<span class="date" data-bind="text: create_time"></span>
+											<span class="mui-pull-right state">
+												<span class="btn comfirm-btn" data-bind="css: {'btn comfirm-btn': state == 1}, event: {tap: state == 1 ? $parent.cofirmExchange : null}, text: title"></span>
+												<span class="btn cancel-btn" data-bind="visible: state == 0, event: {tap: $parent.cancleMyExchange}" style="margin-left: 1vw;"></span>
+											</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!--<div class="list-footer">
+							<span class="btn comfirm-btn">上一页</span>
+							<span class="btn comfirm-btn">下一页</span>
+							</div>-->
+						</div>
+						<div id="item3" class="mui-control-content">
+							<div class="list-header">
+								<span class="sort">序号</span>
+								<span style="">卖家</span>
+								<span>交易种子数</span>
+								<span class="date">交易时间</span>
+								<span class="state">状态</span>
+							</div>
+							<div class="mui-scroll-wrapper" style="height: 57vh;">
+								<div class="mui-scroll">
+									<ul class="mui-table-view" data-bind="foreach: callMeExchangeList">
+										<li class="mui-table-view-cell">
+											<span class="sort" data-bind="text: $index() + 1"></span>
+											<span data-bind="text: user_name"></span>
+											<span data-bind="text: user_exchangenumber"></span>
+											<span class="date" data-bind="text: create_time"></span>
+											<span class="mui-pull-right state">
+												<span data-bind="css: {'btn comfirm-btn': state == 0}, event: {tap: state == 0 ? $parent.cofirmCallMeExchange : null}, text: title"></span>
+											</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 挂买大厅框 -->
+	<div class="position box" data-bind="css: (isShowSecondpwdWindow().showHallWindow && chooseDealOrHallSell() == 2) ? 'active' : ''">
+		<div class="pos-relative">
+			<div class="box-window">
+				<div class="pos-relative">
+					<span class="close-btn" data-bind="event: {tap: closeDealWindow}"></span>
+					<div class="box-header">
+						<h4>挂买大厅</h4>
+					</div>
+					<div class="box-body">
+						<div class="mui-segmented-control">
+							<a class="mui-control-item mui-active" href="#item6">大厅</a>
+							<a class="mui-control-item" href="#item4">发布挂买信息</a>
+							<a class="mui-control-item" href="#item5">我的</a>
+						</div>
+						<div id="item6" class="mui-control-content mui-active">
+							<div class="list-header">
+								<span class="sort">序号</span>
+								<span style="">挂买人微信</span>
+								<span>挂买种子数</span>
+								<span class="date">挂买时间</span>
+								<span class="state">状态</span>
+							</div>
+							<div class="mui-scroll-wrapper" style="height: 57vh;">
+								<div class="mui-scroll">
+									<ul class="mui-table-view" data-bind="foreach: hangSellList">
+										<li class="mui-table-view-cell">
+											<span class="sort" data-bind="text: $index() + 1"></span>
+											<span data-bind="text: weixin"></span>
+											<span data-bind="text: hangsell_number"></span>
+											<span class="date" data-bind="text: create_time"></span>
+											<span class="mui-pull-right state">
+												<span data-bind="text: title"></span>
+											</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div id="item4" class="mui-control-content">
+							<div class="control-group" style="margin-top: 8vh;">
+								<label class="control-label">数目：</label>
+								<div class="controls">
+									<input type="number" data-bind="value: hangSum, valueUpdate: 'afterkeydown'" /><span style="margin-left: 1vw;">(请输入整数)</span>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label"></label>
+								<div class="controls">
+									<span class="btn comfirm-btn" data-bind="event: {tap: startHange}">确认</span>
+								</div>
+							</div>
+						</div>
+						<div id="item5" class="mui-control-content">
+							<div class="list-header">
+								<span class="sort">序号</span>
+								<span style="">挂买人微信</span>
+								<span>挂买种子数</span>
+								<span class="date">挂买时间</span>
+								<span class="state">状态</span>
+							</div>
+							<div class="mui-scroll-wrapper" style="height: 57vh;">
+								<div class="mui-scroll">
+									<ul class="mui-table-view" data-bind="foreach: myHangSellList">
+										<li class="mui-table-view-cell">
+											<span class="sort" data-bind="text: $index() + 1"></span>
+											<span data-bind="text: weixin"></span>
+											<span data-bind="text: hangsell_number"></span>
+											<span class="date" data-bind="text: create_time"></span>
+											<span class="mui-pull-right state">
+												<span data-bind="css: {'btn comfirm-btn': hangsellstate == 1}, text: title, event: {tap: hangsellstate == 1 ? $parent.closeHangSell : 0}"></span>
+											</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 公告框 -->
+	<div class="position box" data-bind="css: isShowNoticeWindow() ? 'active' : ''">
+		<div class="pos-relative">
+			<div class="box-window">
+				<div class="pos-relative">
+					<span class="close-btn" data-bind="event: {tap: closeNoticeWindow}"></span>
+					<div class="box-header">
+						<h4>公告栏</h4>
+					</div>
+					<div class="box-body">
+						<div class="pos-relative">
+							<div class="mui-scroll-wrapper" style="top: 1vh; height: 70vh;">
+								<div class="mui-scroll">
+									<ul class="mui-table-view" data-bind="foreach: noticeList">
+										<li class="mui-table-view-cell">
+											<div style="font-size: 2.5vw; font-weight: 500;">
+												<span class="mui-icon mui-icon-email-filled" style="width: auto; color: #80CB66; font-size: 2vw;"></span>
+												<span data-bind="text: notice_title" style="width: auto; color: #80CB66;"></span>
+											</div>
+											<p data-bind="text: notice_content" style="font-size: 1.8vw; color: #739EC9; line-height: 2.5vw;"></p>
+											<span style="position: absolute; top: 1vw; right: 1vw; width: auto; font-size: 1vw; color: #80CB66;" data-bind="text: create_time"></span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 好友框  -->
+	<div class="position box" data-bind="css: isShowFriendsWindow() ? 'active' : ''">
+		<div class="pos-relative">
+			<div class="box-window">
+				<div class="pos-relative">
+					<span class="close-btn" data-bind="event: {tap: closeFriendWindow}"></span>
+					<div class="box-header">
+						<h4>好友列表</h4>
+					</div>
+					<div class="box-body">
+						<div class="list-header">
+							<span class="sort">序号</span>
+							<span>用户名</span>
+							<span class="later-periods">代数</span>
+							<span class="user-level">等级</span>
+							<span>可收积分</span>
+							<span class="state">操作</span>
+						</div>
+						<div class="pos-relative">
+							<div class="mui-scroll-wrapper" style="top: 0; height: 65vh;">
+								<div class="mui-scroll">
+									<ul class="mui-table-view" data-bind="foreach: friendsList">
+										<li class="mui-table-view-cell">
+											<span class="sort" data-bind="text: $index() + 1"></span>
+											<span data-bind="text: user_name"></span>
+											<span class="later-periods" data-bind="text: lower_level"></span>
+											<span class="user-level" data-bind="text: tree_sum"></span>
+											<span data-bind="text: lower_level == 1 ? tree_sum * 2 : tree_sum"></span>
+											<span class="mui-pull-right state">
+												<span class="btn comfirm-btn" data-bind="visible: tree_sum != 0, event: {tap: isCollected == 0 ? $parent.collectPoints : null}, text: (isCollected && isCollected) == 0 ? '收取' : '已收'"></span>
+											<span class="btn comfirm-btn" data-bind="event: {tap: $parent.showFriendHome}" style="margin-left: 1vw;">查看</span>
+											</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 设置框  -->
+	<div class="position box" data-bind="css: isShowSettingWindow() ? 'active' : ''">
+		<div class="pos-relative">
+			<div class="box-window">
+				<div class="pos-relative">
+					<span class="close-btn" data-bind="event: {tap: closeSetting}"></span>
+					<div class="box-header">
+						<h4>设置</h4>
+					</div>
+					<div class="box-body">
+						<div class="control-group marginTop15">
+							<label class="control-label">背景音乐：</label>
+							<div class="controls">
+								<div class="mui-switch mui-switch-mini" data-bind="css: {'mui-active': isCloseBGM()}, event: {tap: manageBGM}">
+									<div class="mui-switch-handle"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 邀请信息框 -->
+	<div class="position box" data-bind="css: isShowInviteWindow() ? 'active' : ''">
+		<div class="pos-relative">
+			<div class="box-window">
+				<div class="pos-relative">
+					<span class="close-btn" data-bind="event: {tap: closeInviteWindow}"></span>
+					<div class="box-header">
+						<h4>邀请信息</h4>
+					</div>
+					<div class="box-body">
+						<div class="mui-scroll-wrapper system-scroll" style="top: 11vh; height: 70vh; overflow-y: scroll;">
+							<div class="mui-scroll">
+								<div class="control-group">
+									<label class="control-label">推荐人：</label>
+									<div class="controls">
+										<input type="text" data-bind="value: inviteData().pname, valueUpdate: 'afterkeydown'" />
+										<span>(本人推荐就填写自己用户名)</span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">用户名：</label>
+									<div class="controls">
+										<input type="text" data-bind="value: inviteData().user_name, valueUpdate: 'afterkeydown'" />
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">姓名：</label>
+									<div class="controls">
+										<input type="text" class="required" data-bind="value: inviteData().user_realname, valueUpdate: 'afterkeydown'" /><span class="validate-tip"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">性别：</label>
+									<div class="controls">
+										<label class="radio setoption" style="display: inline-block;width: 10vw;">
+			                            <input type="radio" value="男" name="sexchoose" data-bind="checked: inviteData().user_sex">男
+			                        </label>
+										<label class="radio setoption" style="display: inline-block;width: 10vw;">
+			                            <input type="radio" value="女" name="sexchoose" data-bind="checked: inviteData().user_sex">女
+			                        </label>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">电话号码：</label>
+									<div class="controls">
+										<input type="text" class="required" data-bind="value: inviteData().user_telephone, valueUpdate: 'afterkeydown'" /><span class="validate-tip"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">微信号：</label>
+									<div class="controls">
+										<input type="text" class="required" data-bind="value: inviteData().user_weixin, valueUpdate: 'afterkeydown'" /><span class="validate-tip"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">qq号：</label>
+									<div class="controls">
+										<input type="text" class="required" data-bind="value: inviteData().user_qq, valueUpdate: 'afterkeydown'" /><span class="validate-tip"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">支付宝：</label>
+									<div class="controls">
+										<input type="text" class="required" data-bind="value: inviteData().user_alipay, valueUpdate: 'afterkeydown'" /><span class="validate-tip"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label"></label>
+									<div class="controls">
+										<span class="btn comfirm-btn" data-bind="event: {tap: comfirmInviteInfo}">确认</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 积分兑换商城  -->
+	<div class="position box" data-bind="css: isShowMallWindow() ? 'active' : ''">
+		<div class="pos-relative">
+			<div class="box-window">
+				<div class="pos-relative">
+					<span class="close-btn" data-bind="event: {tap: closeMall}"></span>
+					<div class="box-header">
+						<h4>积分商城</h4>
+					</div>
+					<div class="box-body">
+						<div class="mui-segmented-control">
+							<a class="mui-control-item mui-active" href="#item7">积分兑换</a>
+							<a class="mui-control-item" href="#item8">幸运游戏</a>
+						</div>
+						<div id="item7" class="mui-control-content mui-active">
+							<div class="mui-scroll-wrapper" style="height: 57vh;">
+								<div class="mui-scroll">
+									<ul class="mui-table-view" data-bind="foreach: pointsList">
+										<li class="mui-table-view-cell">
+											<span data-bind="text: peach + '个桃子'" style="margin-left: 10vw;"></span>
+											<span data-bind="text: '需消耗' + points + '积分'" style="width: 20vw;"></span>
+											<span class="mui-pull-right state">
+												<span class="btn comfirm-btn" data-bind="text: '兑换', event: {tap: $parent.convertPoints}"></span>
+											</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div id="item8" class="mui-control-content">
+							<div style="display: inline-block; position: relative; left: 50%; transform: translateX(-50%); margin-top: 5vw;">
+								<div class="flip-container" data-bind="css: {'hover': lotteryState() == 1}">
+									<div class="flipper">
+										<div class="front">
+											<img src="img/lottery-bg.png" style="width: 100%; height: 100%; border-radius: 7px;">
+										</div>
+										<div class="back">
+											<div data-bind="text: lotteryText" style="position: absolute; top: 50%; width: 100%; transform: translateY(-50%);"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="control-group" style="margin-top: 5vw;">
+								<label class="control-label"></label>
+								<div class="controls">
+									<span class="btn comfirm-btn" data-bind="event: {tap: lottery}, text: lotteryBtn"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

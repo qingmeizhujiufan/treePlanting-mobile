@@ -1,0 +1,1504 @@
+@media screen and (max-width: 960px){      
+	.game-bg {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+}
+
+
+/* 用户   */
+
+.user-header {
+	top: 2vh;
+	left: 1vw;
+	width: 25vw;
+	height: 10.75vw;
+	/* 0.43 width */
+	background-image: url('../../../img/header-bg.png');
+}
+
+.user-header .wrap-headerimg {
+	position: absolute;
+	left: 3vw;
+	top: 3.5vh;
+	width: 5vw;
+	height: 6.8vw;
+}
+
+.user-header .wrap-headerimg img {
+	width: 100%;
+	height: 100%;
+}
+
+.user-header .user-name {
+	position: absolute;
+    left: 11vw;
+    top: 22%;
+    width: 10vw;
+    color: #fff;
+    text-align: center;
+    font-size: 3vh;
+}
+
+.user-header .user-level {
+    position: absolute;
+    left: 11vw;
+    top: 43%;
+    width: 10vw;
+    color: #80CB66;
+    text-align: center;
+    font-size: 3vh;
+    font-weight: 500;
+}
+
+.user-header .user-tree-level {
+    position: absolute;
+    left: 1vw;
+    top: -1vh;
+    width: 3.5vw;
+    height: 3.5vw;
+    color: #E9D58D;
+    font-size: 1.5vw;
+    line-height: 4vw;
+    text-align: center;
+    background-image: url(../../../img/level.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.hallsell,
+.deal,
+.friend,
+.invite,
+.setting,
+.plant,
+.collect {
+	width: 8vw;
+	height: 12vw;
+}
+
+.hallsell,
+.deal,
+.friend {
+	left: 2vw;
+}
+
+.setting,
+.plant,
+.collect {
+	right: 2vw;
+}
+
+.invite {
+	left: 12vw;
+}
+
+
+/* 挂卖   */
+
+.hallsell {
+	top: 26vh;
+	background-image: url('../../../img/hallsell.png');
+}
+
+
+/* 交易   */
+
+.deal {
+	top: 49.5vh;
+	background-image: url('../../../img/deal.png');
+}
+
+
+/* 好友   */
+
+.friend {
+	top: 73vh;
+	background-image: url('../../../img/friend.png');
+}
+
+/* 邀请  */
+
+.invite {
+	top: 65vh;
+    z-index: 100;
+	background-image: url('../../../img/invite.png');
+}
+
+
+/* 下拉框   */
+
+.drop-down {
+	top: 5vh;
+	right: 2.5vw;
+	width: 7vw;
+	height: 5.46vw;
+	z-index: 25;
+	background-image: url('../../../img/drop-down.png');
+}
+
+
+/* 设置   */
+
+.setting {
+	top: 20vh;
+	background-image: url('../../../img/setting.png');
+}
+
+
+/* 种植   */
+
+.plant {
+	top: 43.5vh;
+	background-image: url('../../../img/plant.png');
+}
+
+
+/* 采集   */
+
+.collect {
+	top: 67vh;
+	background-image: url('../../../img/collect.png');
+}
+
+
+/* 商城   */
+
+.mall {
+	top: 2vh;
+	right: 10.5vw;
+    width: 8vw;
+    height: 11.68vw;
+	background-image: url('../../../img/mall.png');
+}
+
+/* 刷新   */
+
+.refrush {
+    top: 5vh;
+    right: 20.5vw;
+    width: 5vw;
+    height: 7.25vw;
+    background-image: url('../../../img/refrush.png');
+}
+
+/* 返回   */
+
+.back-home {
+    top: 3vh;
+    right: 20vw;
+    width: 5vw;
+    height: 5vw;
+    background-image: url(../../../img/goback.png);
+}
+
+
+/* 仙门 */
+
+.gate {
+	bottom: 14vh;
+	right: 2vw;
+	width: 9vw;
+	height: 9vw;
+	background-image: url('../../../img/gate.png');
+	z-index: 20;
+}
+
+
+/* 树 */
+
+.trees {
+	top: 41vh;
+	left: 15vw;
+	width: 60vw;
+	height: 25vw;
+}
+
+.trees .tree {
+	position: absolute;
+	width: 8vw;
+	height: 2vw;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.trees .tree_1_1,
+.trees .tree_1_2,
+.trees .tree_1_3,
+.trees .tree_1_4,
+.trees .tree_1_5,
+.trees .tree_1_6,
+.trees .tree_1_7,
+.trees .tree_1_8,
+.trees .tree_1_9,
+.trees .tree_1_10 {
+	background-image: url('../../../img/tree-type-1.png');
+}
+
+.trees .tree_1_1 {
+	top: 8vh;
+	left: -1vw;
+}
+
+.trees .tree_1_2 {
+	top: 17vh;
+	left: 4vw;
+}
+
+.trees .tree_1_3 {
+	top: 26vh;
+	left: 9vw;
+}
+
+.trees .tree_1_4 {
+	top: 35vh;
+	left: 14vw;
+}
+
+.trees .tree_1_5 {
+	top: 7vh;
+	left: 12vw;
+}
+
+.trees .tree_1_6 {
+	top: 16vh;
+	left: 17vw;
+}
+
+.trees .tree_1_7 {
+	top: 25vh;
+	left: 22vw;
+}
+
+.trees .tree_1_8 {
+	top: 34vh;
+	left: 27vw;
+}
+
+.trees .tree_1_9 {
+	top: 6vh;
+	left: 25vw;
+}
+
+.trees .tree_1_10 {
+	top: 15vh;
+	left: 30vw;
+}
+
+.trees .tree_2_1,
+.trees .tree_2_2,
+.trees .tree_2_3,
+.trees .tree_2_4,
+.trees .tree_2_5 {
+	background-image: url('../../../img/tree-type-2.png');
+	z-index: 2;
+}
+
+.trees .tree_2_1 {
+	top: 24vh;
+	left: 35vw;
+}
+
+.trees .tree_2_2 {
+	top: 33vh;
+	left: 40vw;
+}
+
+.trees .tree_2_3 {
+	top: 14vh;
+	left: 43vw;
+}
+
+.trees .tree_2_4 {
+	top: 23vh;
+	left: 48vw;
+}
+
+.trees .tree_2_5 {
+	top: 32vh;
+	left: 53vw;
+}
+
+.trees .tree_3_1 {
+	position: absolute;
+	top: 4vh;
+	left: 37vw;
+	width: 10vw;
+	height: 2.5vw;
+	background-image: url('../../../img/tree-type-3.png');
+}
+
+.tree .trunk {
+	position: absolute;
+	top: -6.5vw;
+	left: 0;
+	width: 8vw;
+	height: 7.36vw;
+	background-image: url('../../../img/trunk.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.tree .trunk .peach {
+	position: absolute;
+	top: 1.2vw;
+	left: 1vw;
+	width: 5vw;
+	height: 4.45vw;
+	background-image: url('../../../img/peach.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+
+/* 拆分率 */
+
+.rate {
+	/* 0.25 */
+	bottom: 2vh;
+	right: 2vw;
+	width: 32vw;
+	height: 8vw;
+	font-size: 2vw;
+	background-image: url('../../../img/rate-bg.png');
+}
+
+.rate .text {
+	padding-top: 4vw;
+	padding-left: 4vw;
+	color: #FFF3C5;
+}
+
+
+/* 灵土 */
+
+.sum,
+.available-sum,
+.top-left-sum,
+.top-right-sum {
+	bottom: 3vh;
+	left: 15vw;
+	width: 16vw;
+	height: 3.5vw;
+	font-size: 2vw;
+	background-image: url('../../../img/sum-bg.png');
+}
+
+.available-sum {
+	left: 43vw;
+}
+
+.top-left-sum {
+	top: 3vh;
+	left: 40vw;
+	bottom: auto;
+}
+
+.sum .left-icon,
+.available-sum .left-icon,
+.top-left-sum .left-icon,
+.top-right-sum .left-icon {
+	position: absolute;
+	top: -0.9vw;
+	left: -3vw;
+	width: 5vw;
+	height: 5vw;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.sum .right-icon,
+.available-sum .right-icon,
+.top-left-sum .right-icon,
+.top-right-sum .right-icon
+ {
+	position: absolute;
+	top: -0.9vw;
+	right: -3vw;
+	width: 5vw;
+	height: 5vw;
+	background-image: url('../../../img/add.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.sum .text,
+.available-sum .text,
+.top-left-sum .text,
+.top-right-sum .text {
+	height: 3.5vw;
+	padding: 0 3vw;
+	line-height: 3.5vw;
+	text-align: right;
+	color: #FFF3C5;
+}
+
+
+/* 总共灵土 */
+
+.sum .left-icon,
+.top-left-sum .left-icon {
+	background-image: url('../../../img/sum-left-icon.png');
+}
+
+
+/* 可用灵土 */
+
+.available-sum .left-icon,
+.top-right-sum .left-icon {
+	background-image: url('../../../img/available-sum-left-icon.png');
+}
+
+
+/* 灵土文字 */
+
+.sum-text,
+.available-sum-text,
+.deal-sum-text {
+	position: absolute;
+	top: -4vh;
+	left: 4vw;
+	width: 8vw;
+	height: 2vw;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.sum-text {
+	background-image: url('../../../img/sum-text.png');
+}
+
+.available-sum-text {
+	background-image: url('../../../img/available-sum-text.png');
+}
+
+.deal-sum-text {
+    top: 7vh;
+    left: 3vw;
+    width: 10vw;
+	background-image: url('../../../img/deal-sum-text.png');
+}
+
+.box {
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	background-color: rgba(0, 0, 0, .5);
+	opacity: 0;
+	z-index: -100;
+	-webkit-transition: opacity .25s ease-in;
+	transition: opacity .25s ease-in;
+	overflow: hidden;
+}
+
+.box.active {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	z-index: 100;
+}
+
+.box .box-window {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+    width: 64vw;
+    height: 46.75vw;
+    margin-left: -32vw;
+    margin-top: -23.375vw;
+	background-image: url('../../../img/window-bg.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.box .box-window .box-header {
+	text-align: center;
+}
+
+.box .box-window .box-header h4 {
+    margin: 0;
+    padding-top: 2vh;
+    font-size: 1.2vw;
+    color: #D5BA7C;
+    font-weight: 400;
+}
+
+.box .box-window .box-body {
+	height: 70vh;
+    margin-top: 5vh;
+    padding: 0 1vw;
+    /*overflow-y: scroll;*/
+}
+
+.box .box-window .box-body .mui-scroll-wrapper {
+	top: 4vw;
+    height: 55vh;
+    left: 0;
+    right: 0;
+    width: auto;
+}
+
+.box .box-window .box-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 10vh;
+	text-align: center;
+}
+
+.btn {
+	display: inline-block;
+	padding: .5vh 5vw;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	vertical-align: text-top;
+}
+
+.btn.comfirm-btn {
+    width: 12vw;
+    height: 4.65vw;
+    margin-top: 1vh;
+    padding: 0;
+    text-align: center;
+    line-height: 4.65vw;
+    color: #CCC3A6;
+    font-weight: 500;
+    background-image: url(../../../img/comfirm.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.btn.cancel-btn {
+	width: 12vw;
+    height: 4.65vw;
+	margin-top: 1vh;
+	padding: 0;
+	background-image: url('../../../img/cancel.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.btn.wait-btn {
+	width: 12vw;
+    height: 4.65vw;
+	margin-top: 1vh;
+	padding: 0;
+	background-image: url('../../../img/wait.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.close-btn {
+	position: absolute;
+    top: 1vw;
+    right: -2vw;
+	width: 5vw;
+	height: 5vw;
+	background-image: url('../../../img/close.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	color: #fff;
+}
+
+.mui-table-view .comfirm-btn {
+	margin: 0;
+}
+
+.drop-down-list {
+	box-sizing: content-box;
+	height: 0;
+	margin-top: 6vw;
+	background-color: #AC985C;
+	color: #fff;
+	text-align: center;
+	transition: height ease-in .35s;
+	overflow: hidden;
+	/*border-top: 2px solid #86733a;
+	border-bottom: 2px solid #86733a;*/
+}
+
+.drop-down-list.open {
+	height: 8vw;
+}
+
+.drop-down-list ul {
+	margin: 0;
+}
+
+.drop-down-list ul.open {
+	}
+
+.drop-down-list ul li {
+	padding: .5vw 0;
+	font-size: 1vw;
+}
+
+.list-header {
+	color: #AC985C;
+	font-weight: 500;
+	line-height: 3.5vw;
+}
+
+.list-header span,
+.mui-table-view-cell span {
+	display: inline-block;
+	width: 9vw;
+	text-align: center;
+    color: #739EC9;
+    font-size: 1.5vw;
+}
+
+.mui-table-view-cell span.state span {
+	width: auto;
+}
+
+.list-header span {
+	font-size: 1.5vw;
+}
+
+.list-header span.sort,
+.mui-table-view-cell span.sort {
+	width: 6vw;
+	text-align: center;
+}
+
+.list-header span.later-periods,
+.mui-table-view-cell span.later-periods {
+	width: 7vw;
+	text-align: center;
+}
+
+.list-header span.user-level,
+.mui-table-view-cell span.user-level {
+	width: 7vw;
+	text-align: center;
+}
+
+.list-header span.date,
+.mui-table-view-cell span.date {
+	width: 16vw;
+	text-align: center;
+}
+
+.list-header span.state,
+.mui-table-view-cell span.state {
+	width: 19vw;
+	text-align: center;
+}
+
+.mui-table-view-cell span.state span.btn {
+	width: 7.94vw;
+    height: 3vw;
+    margin-top: -.3vw;
+    line-height: 3vw;
+    font-size: 1.5vw;
+}
+
+.list-footer {
+	background-color: #decaca;
+}
+
+/* 抽奖游戏  */
+/* entire container, keeps perspective */
+.flip-container {
+	-webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    perspective: 1000;
+    -ms-transform: perspective(1000px);
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+}
+	/* flip the pane when hovered */
+	.flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 13vw;
+	height: 15vw;
+}
+
+/* flip speed goes here */
+.flipper {
+	-webkit-transition: 0.6s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 0.6s;
+    -moz-transition: 0.6s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	-webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 0.6s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 0.6s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 0.6s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 0.6s;
+    -ms-transform-style: preserve-3d;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+    background-color: #449e8e;
+    color: #fff;
+    text-align: center;
+    font-size: 2vw;
+    border-radius: 7px;
+}
+
+}
+
+
+/* PC 样式 */
+@media screen and (min-width: 960px){      
+	.game-bg {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+}
+
+
+/* 用户   */
+
+.user-header {
+	top: 2vh;
+	left: 1vw;
+	width: 25vw;
+	height: 10.75vw;
+	/* 0.43 width */
+	background-image: url('../../../img/header-bg.png');
+}
+
+.user-header .wrap-headerimg {
+	position: absolute;
+	left: 3vw;
+	top: 3.5vh;
+	width: 5vw;
+	height: 6.8vw;
+}
+
+.user-header .wrap-headerimg img {
+	width: 100%;
+	height: 100%;
+}
+
+.user-header .user-name {
+	position: absolute;
+    left: 11vw;
+    top: 6.5vh;
+    width: 10vw;
+    color: #fff;
+    text-align: center;
+    font-size: 4vh;
+}
+
+.user-header .user-level {
+    position: absolute;
+    left: 11vw;
+    top: 11vh;
+    width: 10vw;
+    color: #80CB66;
+    text-align: center;
+    font-size: 3vh;
+    font-weight: 500;
+}
+
+.user-header .user-tree-level {
+    position: absolute;
+    left: 1vw;
+    top: -1vh;
+    width: 3.5vw;
+    height: 3.5vw;
+    color: #E9D58D;
+    font-size: 1.5vw;
+    line-height: 3.5vw;
+    text-align: center;
+    background-image: url(../../../img/level.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.hallsell,
+.deal,
+.friend,
+.invite,
+.setting,
+.plant,
+.collect {
+	width: 8vw;
+	height: 12vw;
+}
+
+.hallsell,
+.deal,
+.friend {
+	left: 2vw;
+}
+
+.setting,
+.plant,
+.collect {
+	right: 2vw;
+}
+
+.invite {
+	left: 12vw;
+}
+
+
+/* 挂卖   */
+
+.hallsell {
+	top: 26vh;
+	background-image: url('../../../img/hallsell.png');
+}
+
+
+/* 交易   */
+
+.deal {
+	top: 49.5vh;
+	background-image: url('../../../img/deal.png');
+}
+
+
+/* 好友   */
+
+.friend {
+	top: 73vh;
+	background-image: url('../../../img/friend.png');
+}
+
+/* 邀请  */
+
+.invite {
+	top: 65vh;
+    z-index: 100;
+	background-image: url('../../../img/invite.png');
+}
+
+
+/* 下拉框   */
+
+.drop-down {
+	top: 5vh;
+	right: 2.5vw;
+	width: 7vw;
+	height: 5.46vw;
+	z-index: 25;
+	background-image: url('../../../img/drop-down.png');
+}
+
+
+/* 设置   */
+
+.setting {
+	top: 20vh;
+	background-image: url('../../../img/setting.png');
+}
+
+
+/* 种植   */
+
+.plant {
+	top: 43.5vh;
+	background-image: url('../../../img/plant.png');
+}
+
+
+/* 采集   */
+
+.collect {
+	top: 67vh;
+	background-image: url('../../../img/collect.png');
+}
+
+
+/* 商城   */
+
+.mall {
+	top: 2vh;
+	right: 10.5vw;
+    width: 8vw;
+    height: 11.68vw;
+	background-image: url('../../../img/mall.png');
+}
+
+/* 灵力台   */
+
+.power-station {
+	top: 0vh;
+	right: 8.5vw;
+	width: 15vw;
+	height: 15vw;
+	background-image: url('../../../img/power-station.png');
+}
+
+/* 刷新   */
+
+.refrush {
+    top: 5vh;
+    right: 20.5vw;
+    width: 5vw;
+    height: 7.25vw;
+    background-image: url('../../../img/refrush.png');
+}
+
+/* 返回   */
+
+.back-home {
+    top: 3vh;
+    right: 20vw;
+    width: 5vw;
+    height: 5vw;
+    background-image: url(../../../img/goback.png);
+}
+
+
+/* 仙门 */
+
+.gate {
+	bottom: 14vh;
+	right: 2vw;
+	width: 9vw;
+	height: 9vw;
+	background-image: url('../../../img/gate.png');
+	z-index: 20;
+}
+
+
+/* 树 */
+
+.trees {
+	top: 41vh;
+	left: 15vw;
+	width: 60vw;
+	height: 25vw;
+}
+
+.trees .tree {
+	position: absolute;
+	width: 8vw;
+	height: 2vw;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.trees .tree_1_1,
+.trees .tree_1_2,
+.trees .tree_1_3,
+.trees .tree_1_4,
+.trees .tree_1_5,
+.trees .tree_1_6,
+.trees .tree_1_7,
+.trees .tree_1_8,
+.trees .tree_1_9,
+.trees .tree_1_10 {
+	background-image: url('../../../img/tree-type-1.png');
+}
+
+.trees .tree_1_1 {
+	top: 8vh;
+	left: -1vw;
+}
+
+.trees .tree_1_2 {
+	top: 17vh;
+	left: 4vw;
+}
+
+.trees .tree_1_3 {
+	top: 26vh;
+	left: 9vw;
+}
+
+.trees .tree_1_4 {
+	top: 35vh;
+	left: 14vw;
+}
+
+.trees .tree_1_5 {
+	top: 7vh;
+	left: 12vw;
+}
+
+.trees .tree_1_6 {
+	top: 16vh;
+	left: 17vw;
+}
+
+.trees .tree_1_7 {
+	top: 25vh;
+	left: 22vw;
+}
+
+.trees .tree_1_8 {
+	top: 34vh;
+	left: 27vw;
+}
+
+.trees .tree_1_9 {
+	top: 6vh;
+	left: 25vw;
+}
+
+.trees .tree_1_10 {
+	top: 15vh;
+	left: 30vw;
+}
+
+.trees .tree_2_1,
+.trees .tree_2_2,
+.trees .tree_2_3,
+.trees .tree_2_4,
+.trees .tree_2_5 {
+	background-image: url('../../../img/tree-type-2.png');
+	z-index: 2;
+}
+
+.trees .tree_2_1 {
+	top: 24vh;
+	left: 35vw;
+}
+
+.trees .tree_2_2 {
+	top: 33vh;
+	left: 40vw;
+}
+
+.trees .tree_2_3 {
+	top: 14vh;
+	left: 43vw;
+}
+
+.trees .tree_2_4 {
+	top: 23vh;
+	left: 48vw;
+}
+
+.trees .tree_2_5 {
+	top: 32vh;
+	left: 53vw;
+}
+
+.trees .tree_3_1 {
+	position: absolute;
+	top: 4vh;
+	left: 37vw;
+	width: 10vw;
+	height: 2.5vw;
+	background-image: url('../../../img/tree-type-3.png');
+}
+
+.tree .trunk {
+	position: absolute;
+	top: -6.5vw;
+	left: 0;
+	width: 8vw;
+	height: 7.36vw;
+	background-image: url('../../../img/trunk.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.tree .trunk .peach {
+	position: absolute;
+	top: 1.2vw;
+	left: 1vw;
+	width: 5vw;
+	height: 4.45vw;
+	background-image: url('../../../img/peach.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+
+/* 拆分率 */
+
+.rate {
+	/* 0.25 */
+	bottom: 2vh;
+	right: 2vw;
+	width: 32vw;
+	height: 8vw;
+	font-size: 2vw;
+	background-image: url('../../../img/rate-bg.png');
+}
+
+.rate .text {
+	padding-top: 4.8vw;
+	padding-left: 4vw;
+	color: #FFF3C5;
+}
+
+
+/* 灵土 */
+
+.sum,
+.available-sum,
+.top-left-sum,
+.top-right-sum {
+	bottom: 3vh;
+	left: 15vw;
+	width: 16vw;
+	height: 3.5vw;
+	font-size: 2vw;
+	background-image: url('../../../img/sum-bg.png');
+}
+
+.available-sum {
+	left: 43vw;
+}
+
+.top-left-sum {
+	top: 3vh;
+	left: 40vw;
+	bottom: auto;
+}
+
+.sum .left-icon,
+.available-sum .left-icon,
+.top-left-sum .left-icon,
+.top-right-sum .left-icon {
+	position: absolute;
+	top: -0.9vw;
+	left: -3vw;
+	width: 5vw;
+	height: 5vw;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.sum .right-icon,
+.available-sum .right-icon,
+.top-left-sum .right-icon,
+.top-right-sum .right-icon
+ {
+	position: absolute;
+	top: -0.9vw;
+	right: -3vw;
+	width: 5vw;
+	height: 5vw;
+	background-image: url('../../../img/add.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.sum .text,
+.available-sum .text,
+.top-left-sum .text,
+.top-right-sum .text {
+	height: 3.5vw;
+	padding: 0 3vw;
+	line-height: 3.5vw;
+	text-align: right;
+	color: #FFF3C5;
+}
+
+
+/* 总共灵土 */
+
+.sum .left-icon,
+.top-left-sum .left-icon {
+	background-image: url('../../../img/sum-left-icon.png');
+}
+
+
+/* 可用灵土 */
+
+.available-sum .left-icon,
+.top-right-sum .left-icon {
+	background-image: url('../../../img/available-sum-left-icon.png');
+}
+
+
+/* 灵土文字 */
+
+.sum-text,
+.available-sum-text,
+.deal-sum-text {
+	position: absolute;
+	top: -4vh;
+	left: 4vw;
+	width: 8vw;
+	height: 2vw;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.sum-text {
+	background-image: url('../../../img/sum-text.png');
+}
+
+.available-sum-text {
+	background-image: url('../../../img/available-sum-text.png');
+}
+
+.deal-sum-text {
+    top: 7vh;
+    left: 3vw;
+    width: 10vw;
+	background-image: url('../../../img/deal-sum-text.png');
+}
+
+.box {
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	background-color: rgba(0, 0, 0, .5);
+	opacity: 0;
+	z-index: -100;
+	-webkit-transition: opacity .25s ease-in;
+	transition: opacity .25s ease-in;
+	overflow: hidden;
+}
+
+.box.active {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	z-index: 100;
+}
+
+.box .box-window {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+    width: 64vw;
+    height: 46.75vw;
+	background-image: url('../../../img/window-bg.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.box .box-window .box-header {
+	text-align: center;
+}
+
+.box .box-window .box-header h4 {
+    margin: 0;
+    padding-top: 3vh;
+    font-size: 1.2vw;
+    color: #D5BA7C;
+    font-weight: 400;
+}
+
+.box .box-window .box-body {
+	height: 70vh;
+    margin-top: 5vh;
+    padding: 0 1vw;
+    /*overflow-y: scroll;*/
+}
+
+.box .box-window .box-body .mui-scroll-wrapper {
+	top: 4vw;
+    height: 55vh;
+    left: 0;
+    right: 0;
+    width: auto;
+}
+
+.box .box-window .box-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 10vh;
+	text-align: center;
+}
+
+.btn {
+	display: inline-block;
+	padding: .5vh 5vw;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	vertical-align: text-top;
+}
+
+.btn.comfirm-btn {
+    width: 12vw;
+    height: 4.65vw;
+    margin-top: 1vh;
+    padding: 0;
+    text-align: center;
+    line-height: 4.65vw;
+    color: #CCC3A6;
+    font-weight: 500;
+    background-image: url(../../../img/comfirm.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.btn.cancel-btn {
+	width: 12vw;
+    height: 4.65vw;
+	margin-top: 1vh;
+	padding: 0;
+	background-image: url('../../../img/cancel.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.btn.wait-btn {
+	width: 12vw;
+    height: 4.65vw;
+	margin-top: 1vh;
+	padding: 0;
+	background-image: url('../../../img/wait.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.close-btn {
+	position: absolute;
+    top: 1vw;
+    right: -2vw;
+	width: 5vw;
+	height: 5vw;
+	background-image: url('../../../img/close.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	color: #fff;
+}
+
+.mui-table-view .comfirm-btn {
+	margin: 0;
+}
+
+.drop-down-list {
+	box-sizing: content-box;
+	height: 0;
+	margin-top: 6vw;
+	background-color: #AC985C;
+	color: #fff;
+	text-align: center;
+	transition: height ease-in .35s;
+	overflow: hidden;
+	/*border-top: 2px solid #86733a;
+	border-bottom: 2px solid #86733a;*/
+}
+
+.drop-down-list.open {
+	height: 8vw;
+}
+
+.drop-down-list ul {
+	margin: 0;
+}
+
+.drop-down-list ul.open {
+	}
+
+.drop-down-list ul li {
+	padding: .5vw 0;
+	font-size: 1vw;
+}
+
+.list-header {
+	color: #AC985C;
+	font-weight: 500;
+	line-height: 3.5vw;
+}
+
+.list-header span,
+.mui-table-view-cell span {
+	display: inline-block;
+	width: 9vw;
+	text-align: center;
+    color: #739EC9;
+    font-size: 1.5vw;
+}
+
+.mui-table-view-cell span.state span {
+	width: auto;
+}
+
+.list-header span {
+	font-size: 1.5vw;
+}
+
+.list-header span.sort,
+.mui-table-view-cell span.sort {
+	width: 6vw;
+	text-align: center;
+}
+
+.list-header span.later-periods,
+.mui-table-view-cell span.later-periods {
+	width: 7vw;
+	text-align: center;
+}
+
+.list-header span.user-level,
+.mui-table-view-cell span.user-level {
+	width: 7vw;
+	text-align: center;
+}
+
+.list-header span.date,
+.mui-table-view-cell span.date {
+	width: 16vw;
+	text-align: center;
+}
+
+.list-header span.state,
+.mui-table-view-cell span.state {
+	width: 19vw;
+	text-align: center;
+}
+
+.mui-table-view-cell span.state span.btn {
+	width: 7.94vw;
+    height: 3vw;
+    margin-top: -.3vw;
+    line-height: 3vw;
+    font-size: 1.5vw;
+}
+
+.list-footer {
+	background-color: #decaca;
+}
+
+}

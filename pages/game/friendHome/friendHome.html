@@ -1,0 +1,65 @@
+<!-- 背景图 -->
+<img src="img/bg.png" class="game-bg" />
+<div style="position: relative; z-index: 100;">
+	<!-- 用户信息 -->
+	<div class="position user-header">
+		<div class="pos-relative">
+			<div class="wrap-headerimg">
+				<img data-bind="attr: {src: user_sex() == '男' ? 'img/man.png' : 'img/woman.png'}" />
+			</div>
+			<div class="user-name" data-bind="text: user_name"></div>
+			<div class="user-level" data-bind="">普通玩家</div>
+			<div class="user-tree-level" data-bind="text: user_tree_level"></div>
+		</div>
+	</div>
+	<!-- 返回 -->
+	<div class="position back-home" data-bind="event: {tap: backHome}"></div>
+	<!-- 果树 -->
+	<div class="position trees">
+		<div class="pos-relative" data-bind="foreach: plantInfo">
+			<div class="tree" data-bind="css: 'tree' + index">
+				<div class="trunk" data-bind="visible: total >= 300, event: {tap: $parent.showTeeWindow}">
+					<div class="pos-relative">
+						<div class="peach" data-bind="visible: hasPeach(), event: {tap: $parent.pickPeachs}"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 仓库 -->
+	<div class="position sum" data-bind="event: {tap: ''}">
+		<div class="pos-relative">
+			<div class="left-icon"></div>
+			<div class="text" data-bind="text: totalgains"></div>
+			<div class="right-icon"></div>
+			<div class="sum-text"></div>
+		</div>
+	</div>
+	<!-- 今日收益 -->
+	<div class="position available-sum" data-bind="event: {tap: ''}">
+		<div class="pos-relative">
+			<div class="left-icon"></div>
+			<div class="text" data-bind="text: store"></div>
+			<div class="right-icon"></div>
+			<div class="available-sum-text"></div>
+		</div>
+	</div>
+	<!-- 测试1 -->
+	<!--<div class="position top-left-sum" data-bind="event: {tap: ''}" style="top: 3vw; left: 38vw;">
+		<div class="pos-relative">
+			<div class="left-icon"></div>
+			<div class="text" data-bind="text: store"></div>
+			<div class="right-icon"></div>
+			<div class="sum-text"></div>
+		</div>
+	</div>-->
+	<!-- 测试2 -->
+	<!--<div class="position top-right-sum" data-bind="event: {tap: ''}" style="top: 3vw; left: 60vw;">
+		<div class="pos-relative">
+			<div class="left-icon"></div>
+			<div class="text" data-bind="text: 0"></div>
+			<div class="right-icon"></div>
+			<div class="available-sum-text"></div>
+		</div>
+	</div>-->
+</div>

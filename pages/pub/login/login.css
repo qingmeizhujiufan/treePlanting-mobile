@@ -1,0 +1,31 @@
+.login-box {
+	top: 0;
+	left: 25vw;
+	right: 25vw;
+	width: 50vw;
+	height: 100vh;
+}
+
+.login-box input {
+	width: 32vw !important;
+	height: 5.12vw !important;
+	margin-top: 5vh !important;
+	background-image: url('../../../img/login-input-bg.png') !important;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	font-size: 2vw;
+}
+
+.login-box .wrap-btn {
+	margin-top: 5vh;
+}
+
+.login-box .wrap-btn .enter-btn {
+	display: inline-block;
+	width: 28vw;
+    height: 5.58vw;
+    margin-left: 5vw;
+	background-image: url('../../../img/enter.png') !important;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
